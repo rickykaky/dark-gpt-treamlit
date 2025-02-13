@@ -42,9 +42,10 @@ if prompt := st.chat_input("What is up?"):
  
     result = generate_meme(prompt)
  
-    response = f"Echo: { display_html_layout(result.link,result.champs)}"
+    response = f"Echo: { display_html_layout(result.id,result.link,result.champs)}"
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         st.markdown(response)
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
+    st.write (result.id)

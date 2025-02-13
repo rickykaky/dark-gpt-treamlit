@@ -59,9 +59,9 @@ def get_meme_template():
     },
     {
         "ID": "trump_bill_signing",
-        "Description": "Le mème 'Trump Bill Signing' montre Donald Trump signant un document officiel.",
+        "Description": "Le mème 'Trump Bill Signing' montre Donald Trump présantant le contenu d'un document officiel.",
         "Champs": {
-            "0": "Texte affiché sur le document"
+            "0": "Uniquement le texte affiché sur le document  "
         },
         "Link": "https://imgflip.com/s/meme/Trump-Bill-Signing.jpg"
     },
@@ -97,6 +97,7 @@ def get_meme_template():
         "Description": "Le mème 'Hide the Pain Harold' montre un homme avec un sourire forcé, cachant son mal-être.",
         "Champs": {
             "0": "Texte décrivant la situation gênante"
+
         },
         "Link": "https://imgflip.com/s/meme/Hide-the-Pain-Harold.jpg"
     },
@@ -104,7 +105,8 @@ def get_meme_template():
         "ID": "monkey_puppet",
         "Description": "Le mème 'Monkey Puppet' montre une marionnette de singe détournant le regard de manière gênée.",
         "Champs": {
-            "0": "Texte décrivant la situation embarrassante"
+            "0": "Texte décrivant la situation embarrassante",
+            "1": "Texte décrivant la solution bidon trouvée"
         },
         "Link": "https://imgflip.com/s/meme/Monkey-Puppet.jpg"
     },
