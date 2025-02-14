@@ -18,7 +18,7 @@ model = get_model()
  
  
  
- 
+
  
  
  
@@ -27,12 +27,22 @@ st.title("Dark-GPT")
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
- 
+
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
- 
+
+ # Fonction pour ajouter un message à l'historique
+def add_message(role, content):
+    st.session_state.messages.append({"role": role, "content": content})
+
+# Afficher l'historique des messages
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.write(msg["content"])
+
+
 # React to user input
 if prompt := st.chat_input("What is up?"):
     # Display user message in chat message container

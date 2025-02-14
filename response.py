@@ -4,7 +4,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from Template_class import Template
 from template import get_meme_template
 from positions import meme_position
- 
+from Exemples import exemples
  
 template_section = "\n\n".join([
     f"----\nID: {meme['ID']}\nDescription: {meme['Description']}\nChamps:\n"
@@ -45,6 +45,8 @@ Ah, le stratège ! Tu comptes sur le coup de chance, comme un joueur de loto qui
 Le twist : Le "feeling", c'est aussi une forme d'intelligence. On appelle ça l'intuition. L’inconscient a stocké bien plus de choses que tu ne le penses. Alors, laisse-le te guider !"]
  
 Utilise la fonction Template.
+
+Exemples : {exemples}
  
 Templates: {template_section}
  
@@ -78,7 +80,7 @@ def display_html_layout(meme_id,meme_link, texts):
 
     # Vérifier si le nombre de textes correspond au nombre de positions disponibles
     if len(texts) != len(positions):
-        st.error(f"Le nombre de textes ne correspond pas aux champs du mème.{texts}/positions")
+        st.error(f"Le nombre de textes ne correspond pas aux champs du mème.{texts}/{positions}")
         return
 
     # Générer le HTML des textes positionnés
