@@ -44,6 +44,6 @@ if prompt := st.chat_input("Générez votre meme"):
     with st.chat_message("assistant"):
         st.markdown(response)
     # Add assistant response to chat history
-    add_message(assistant, response)
-    #st.session_state.messages.append({"role": "assistant", "content": response})
+    #add_message(assistant, response)
+    st.session_state.messages.append({"role": "assistant", "content": response})
     st.write (result.id)
