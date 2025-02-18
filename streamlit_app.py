@@ -11,8 +11,8 @@ os.environ ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
  
 @st.cache_resource
 def get_model():
-    ChatGoogleGenerativeAI(model="gemini-2.0-flash")
-    return model = get_model()
+    return ChatGoogleGenerativeAI(model="gemini-2.0-flash")
+model = get_model()
  
  
  
