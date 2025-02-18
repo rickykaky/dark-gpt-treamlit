@@ -11,12 +11,8 @@ os.environ ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
  
 @st.cache_resource
 def get_model():
-    return ChatGoogleGenerativeAI(model="gemini-2.0-flash")
-model = get_model()
- 
- 
- 
-
+    ChatGoogleGenerativeAI(model="gemini-2.0-flash")
+    return model = get_model()
  
  
  
@@ -25,7 +21,7 @@ st.title("Dark-GPT")
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "Entrez une situation pour avoir un meme"}]
-
+"""
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -40,7 +36,6 @@ def add_message(role, content):
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
-"""
 
 # React to user input
 if prompt := st.chat_input("Générez votre meme"):
