@@ -27,8 +27,7 @@ if "messages" not in st.session_state:
 
 # Afficher l'historique des messages
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.write(message["content"])
+    st.chat_message(message["role"]).write(message["content"])
 
 # React to user input
 if prompt := st.chat_input("Générez votre meme"):
@@ -41,8 +40,7 @@ if prompt := st.chat_input("Générez votre meme"):
  
     response = f"Echo: { display_html_layout(result.id,result.link,result.champs)}"
     # Display assistant response in chat message container
-    with st.chat_message("assistant"):
-        st.markdown(response)
+    st.chat_message("assistant").markdown(response)
     # Add assistant response to chat history
     #add_message(assistant, response)
     st.session_state.messages.append({"role": "assistant", "content": response})
